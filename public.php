@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>House of Wash · Modern Laundromat Care</title>
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Plus Jakarta Sans for that clean modern tech look -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Bootstrap 5 CSS & Icons -->
+  <!-- Bootstrap 5 CSS & Bootstrap Icons for layout and UI symbols -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   
   <style>
+    /* setting up root colors so we don't have to keep repeating hex codes */
     :root {
       --bg-slate: #0b0f19;
       --card-bg: rgba(18, 24, 38, 0.75);
@@ -22,6 +23,7 @@
       --accent-blue: #3b82f6;
     }
 
+    /* dark mode base with a gradient overlay so the background image isn't too bright */
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       color: #f8fafc;
@@ -32,7 +34,7 @@
       overflow-x: hidden;
     }
 
-    /* Dribbble-style Ambient Glows */
+    /* adds that cool subtle glowing light blob in the background */
     body::before {
       content: '';
       position: absolute;
@@ -50,7 +52,7 @@
       z-index: 10;
     }
 
-    /* Glassmorphic Navbar */
+    /* sticky nav with frosted glass blur effect */
     .navbar-custom {
       background: rgba(18, 24, 38, 0.65);
       backdrop-filter: blur(20px);
@@ -59,7 +61,7 @@
       padding: 1.25rem 2rem;
     }
 
-    /* Dribbble-grade Frosted Cards */
+    /* core glassmorphic card style with a smooth lift animation on hover */
     .dribbble-card {
       background: var(--card-bg);
       backdrop-filter: blur(20px);
@@ -75,7 +77,7 @@
       border-color: rgba(59, 130, 246, 0.35);
     }
 
-    /* Buttons */
+    /* primary action button with a nice glowing blue gradient */
     .btn-primary-glow {
       background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
       border: none;
@@ -91,6 +93,7 @@
       background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
     }
 
+    /* subtle glass outline button for secondary actions */
     .btn-outline-glass {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -107,6 +110,7 @@
       color: #fff;
     }
 
+    /* custom pill badge style */
     .badge-pill-custom {
       background: rgba(59, 130, 246, 0.15);
       color: #93c5fd;
@@ -118,7 +122,7 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation Bar: stays fixed on top, includes branding and quick links -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="#">
@@ -132,12 +136,13 @@
       <div class="ms-auto d-flex align-items-center gap-4">
         <a href="#services" class="text-white text-decoration-none small fw-semibold opacity-75 hover-opacity-100 d-none d-md-inline">Services & Rates</a>
         <a href="#status" class="text-white text-decoration-none small fw-semibold opacity-75 hover-opacity-100 d-none d-md-inline">Shop Status</a>
+        <!-- links over to the admin/staff login gateway -->
         <a href="login.php" class="btn btn-sm btn-outline-glass px-4 py-2">Staff Login</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section: catchphrase on the left, live availability card on the right -->
   <div class="container py-5 my-4">
     <div class="row align-items-center g-5">
       <div class="col-lg-7">
@@ -160,11 +165,12 @@
         </div>
       </div>
 
-      <!-- Live Shop Status Card -->
+      <!-- Live Shop Status Card: shows queue count and open machines -->
       <div class="col-lg-5" id="status">
         <div class="dribbble-card p-4 p-xl-5">
           <div class="d-flex justify-content-between align-items-center mb-4">
             <h5 class="fw-bold m-0" style="font-size: 1.1rem;">Live Availability</h5>
+            <!-- green pulsing badge showing the shop is currently open -->
             <span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-25 px-3 py-1.5 rounded-pill small fw-bold">
               <span class="spinner-grow spinner-grow-sm me-1" role="status" style="width: 8px; height: 8px;"></span> Open Now
             </span>
@@ -193,13 +199,14 @@
     </div>
   </div>
 
-  <!-- Services & Pricing Section -->
+  <!-- Services & Pricing Section: 3-column layout breaking down each offering -->
   <div class="container py-5 mb-5" id="services">
     <div class="text-center mb-5">
       <h2 class="fw-bold text-white mb-2" style="font-size: 2rem; letter-spacing: -0.02em;">Services & Pricing</h2>
       <p class="text-light opacity-75">Transparent, professional rates designed for ultimate convenience.</p>
     </div>
     <div class="row g-4">
+      <!-- Card 1: Self Service -->
       <div class="col-md-4">
         <div class="dribbble-card p-4 p-xl-4 h-100 d-flex flex-column">
           <div class="rounded-4 p-3 mb-4 d-inline-flex align-items-center justify-content-center" style="width: 54px; height: 54px; background: rgba(59, 130, 246, 0.15); color: #60a5fa;">
@@ -213,6 +220,7 @@
           </div>
         </div>
       </div>
+      <!-- Card 2: Full Service (highlighted as the featured option) -->
       <div class="col-md-4">
         <div class="dribbble-card p-4 p-xl-4 h-100 d-flex flex-column" style="border-color: rgba(59, 130, 246, 0.4); background: rgba(18, 24, 38, 0.85);">
           <div class="rounded-4 p-3 mb-4 d-inline-flex align-items-center justify-content-center" style="width: 54px; height: 54px; background: rgba(34, 197, 94, 0.15); color: #4ade80;">
@@ -226,6 +234,7 @@
           </div>
         </div>
       </div>
+      <!-- Card 3: Express Dry Only -->
       <div class="col-md-4">
         <div class="dribbble-card p-4 p-xl-4 h-100 d-flex flex-column">
           <div class="rounded-4 p-3 mb-4 d-inline-flex align-items-center justify-content-center" style="width: 54px; height: 54px; background: rgba(245, 158, 11, 0.15); color: #fbbf24;">
@@ -242,7 +251,7 @@
     </div>
   </div>
 
-  <!-- Location / Footer Section -->
+  <!-- Location & Contact Section -->
   <div class="container pb-5 mb-4" id="location">
     <div class="dribbble-card p-4 p-md-5 text-center mx-auto" style="max-width: 760px;">
       <h4 class="fw-bold text-white mb-2">Visit House of Wash Today</h4>
@@ -259,6 +268,7 @@
     <p class="mb-0">&copy; 2026 House of Wash · Systems Engineering Coursework (IT 314)</p>
   </footer>
 
+  <!-- Bootstrap JS Bundle for interactive components if needed -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
